@@ -1,0 +1,21 @@
+import json
+import urllib.request
+
+API_KEY = "727024346b5ca16e9c038647bd8505fe"
+LEAGUE_ID = 253
+SEASON = "2023"
+
+url = (
+    f"https://v3.football.api-sports.io/teams?league={LEAGUE_ID}&season={SEASON}"
+)
+req = urllib.request.Request(url, headers={"x-apisports-key": API_KEY})
+
+try:
+  with urllib.request.urlopen(req) as resp:
+    data = json.loads(resp.read().decode("utf-8"))
+    print(f"Total de equipos encontrados: {len(data.get('response', []))}\n")
+    for item in data.get("response", []):
+      t = item.get("team", {})
+      print(f"ID: {t.get('id')} -> {t.get('name')}")
+except Exception as e:
+  print(f"Error: {e}")
