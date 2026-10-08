@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.fernando.stathead_fc"
+    namespace = "com.fernando.statheadfc"
     compileSdk = 36
     buildToolsVersion = "36.0.0"
     ndkVersion = flutter.ndkVersion
@@ -24,7 +24,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.fernando.stathead_fc"
+        applicationId = "com.fernando.statheadfc"
         minSdk = flutter.minSdkVersion
         targetSdk = 36
         versionCode = flutter.versionCode
